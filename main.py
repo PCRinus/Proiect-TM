@@ -7,12 +7,14 @@ if len(sys.argv) != 3:
 
 tip_sablon = sys.argv[1]
 
-src = cv2.imread(f"{sys.argv[1]}")
+src = cv2.imread(f"poze/{sys.argv[1]}")
 
 sablon = cv2.imread(f"sabloane/{sys.argv[2]}.png")
 
 if sablon is None:
-    raise(NameError("Nu exista acel sablon"))
+    sablon = cv2.imread(f"sabloane/{sys.argv[2]}.jpg")
+    if sablon is None:
+        raise(NameError("Nu exista acel sablon"))
 
 src = cv2.resize(src, sablon.shape[1::-1])
 src = cv2.cvtColor(src, cv2.COLOR_RGB2RGBA)
