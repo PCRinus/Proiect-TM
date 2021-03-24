@@ -5,3 +5,4 @@
 
  ## Rulare
 `python <script.py> <cale_spre_imagine> <tip_sablon>`
+Exexplu: python main.py mircea.jpg batman
